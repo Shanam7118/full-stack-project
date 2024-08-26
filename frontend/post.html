@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>postbook</title>
+    <link rel="stylesheet" href="/poststyle.css">
+</head>
+
+    <body  onload="checkloggedinuser(); onload = showloggedusername() ">
+   
+   <div class="header">
+    <h1>hello,<span id="logged-username">username</span></h1>
+    <button onclick="logout()" class="logoutBtn">logout</button>
+   </div>
+
+   <section id="add-post-container">
+   <article>
+    <h2>add new post</h2>
+    <div>
+        <textarea name="" id="newpost-text" cols="50" rows="5" placeholder="add post text"></textarea>
+    </div>
+
+
+    <div>
+        <input type="text" id="newpost-image" placeholder="add post image url">
+    </div>
+
+    <div>
+        <button onclick="handleaddnewpost()" class="addpost-btn">post</button>
+    </div>
+   </article>
+   </section>
+    
+
+    <section id="post-container">
+
+        <!--post-->
+        <div class="post">
+            <div class="post-header">
+                <div class="post-user-image">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNm7IQAH1ehCAGOAhUTfwOEg-DL_kkLdfu1A&s" alt="post-user-image">
+
+                </div>
+                <div class="post-username-time">
+                    <p class="post-username">username</p>
+                    <div class="posted-time">
+                        <span>13</span>
+                        <span>hours ago</span>
+
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="post-text">
+                 <p class="post-text-content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae, asperiores culpa quasi sequi quibusdam architecto minus sunt sint doloremque fugit!</p>
+            </div>
+
+            <div class="post-image">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNm7IQAH1ehCAGOAhUTfwOEg-DL_kkLdfu1A&s" alt="post-image">
+
+            </div>
+
+            <!--comments under a single post-->
+
+            <div class="comments-holder">
+                <div class="comment">
+                    <div class="comment-user-image">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNm7IQAH1ehCAGOAhUTfwOEg-DL_kkLdfu1A&s" alt="comment-user-image">
+                    </div>
+
+                    <div class="comment-text-container">
+                         <h4>commented username</h4>
+                         <p class="comment-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde, saepe!</p>
+                    </div>
+                </div>
+                <div class="comment">
+                    <div class="comment-user-image">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNm7IQAH1ehCAGOAhUTfwOEg-DL_kkLdfu1A&s" alt="comment-user-image">
+                    </div>
+
+                    <div class="comment-text-container">
+                         <h4>commented username</h4>
+                         <p class="comment-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde, saepe!</p>
+                    </div>
+                </div>
+                <div class="comment">
+                    <div class="comment-user-image">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNm7IQAH1ehCAGOAhUTfwOEg-DL_kkLdfu1A&s" alt="comment-user-image">
+                    </div>
+
+                    <div class="comment-text-container">
+                         <h4>commented username</h4>
+                         <p class="comment-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde, saepe!</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!--new comment input fiels-->
+
+            <div class="postcomment-holder">
+                <div class="post-comment-input-field-holder">
+                    <input type="text" placeholder="post your comment" class="postcomment-input-field" id="postcomment-input-for-postid1">
+
+                </div>
+                <div class="comment-btn-holder">
+                    <button id="comment-btn" class="postcomment-btn">
+                        comment
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+         <!--post-->
+         <div class="post">
+            <div class="post-header">
+                <div class="post-user-image">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNm7IQAH1ehCAGOAhUTfwOEg-DL_kkLdfu1A&s" alt="post-user-image">
+
+                </div>
+                <div class="post-username-time">
+                    <p class="post-username">username</p>
+                    <div class="posted-time">
+                        <span>13</span>
+                        <span>hours ago</span>
+
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="post-text">
+                 <p class="post-text-content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae, asperiores culpa quasi sequi quibusdam architecto minus sunt sint doloremque fugit!</p>
+            </div>
+
+            <div class="post-image">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNm7IQAH1ehCAGOAhUTfwOEg-DL_kkLdfu1A&s" alt="post-image">
+
+            </div>
+
+            <!--comments under a single post-->
+
+            <div class="comments-holder">
+                <div class="comment">
+                    <div class="comment-user-image">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNm7IQAH1ehCAGOAhUTfwOEg-DL_kkLdfu1A&s" alt="comment-user-image">
+                    </div>
+
+                    <div class="comment-text-container">
+                         <h4>commented username</h4>
+                         <p class="comment-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde, saepe!</p>
+                    </div>
+                </div>
+                <div class="comment">
+                    <div class="comment-user-image">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNm7IQAH1ehCAGOAhUTfwOEg-DL_kkLdfu1A&s" alt="comment-user-image">
+                    </div>
+
+                    <div class="comment-text-container">
+                         <h4>commented username</h4>
+                         <p class="comment-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde, saepe!</p>
+                    </div>
+                </div>
+                <div class="comment">
+                    <div class="comment-user-image">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNm7IQAH1ehCAGOAhUTfwOEg-DL_kkLdfu1A&s" alt="comment-user-image">
+                    </div>
+
+                    <div class="comment-text-container">
+                         <h4>commented username</h4>
+                         <p class="comment-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde, saepe!</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!--new comment input fiels-->
+
+            <div class="postcomment-holder">
+                <div class="post-comment-input-field-holder">
+                    <input type="text" placeholder="post your comment" class="postcomment-input-field" id="postcomment-input-for-postid1">
+
+                </div>
+                <div class="comment-btn-holder">
+                    <button id="comment-btn" class="postcomment-btn">
+                        comment
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+         <!--post-->
+         <div class="post">
+            <div class="post-header">
+                <div class="post-user-image">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNm7IQAH1ehCAGOAhUTfwOEg-DL_kkLdfu1A&s" alt="post-user-image">
+
+                </div>
+                <div class="post-username-time">
+                    <p class="post-username">username</p>
+                    <div class="posted-time">
+                        <span>13</span>
+                        <span>hours ago</span>
+
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="post-text">
+                 <p class="post-text-content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae, asperiores culpa quasi sequi quibusdam architecto minus sunt sint doloremque fugit!</p>
+            </div>
+
+            <div class="post-image">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNm7IQAH1ehCAGOAhUTfwOEg-DL_kkLdfu1A&s" alt="post-image">
+
+            </div>
+
+            <!--comments under a single post-->
+
+            <div class="comments-holder">
+                <div class="comment">
+                    <div class="comment-user-image">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNm7IQAH1ehCAGOAhUTfwOEg-DL_kkLdfu1A&s" alt="comment-user-image">
+                    </div>
+
+                    <div class="comment-text-container">
+                         <h4>commented username</h4>
+                         <p class="comment-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde, saepe!</p>
+                    </div>
+                </div>
+                <div class="comment">
+                    <div class="comment-user-image">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNm7IQAH1ehCAGOAhUTfwOEg-DL_kkLdfu1A&s" alt="comment-user-image">
+                    </div>
+
+                    <div class="comment-text-container">
+                         <h4>commented username</h4>
+                         <p class="comment-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde, saepe!</p>
+                    </div>
+                </div>
+                <div class="comment">
+                    <div class="comment-user-image">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNm7IQAH1ehCAGOAhUTfwOEg-DL_kkLdfu1A&s" alt="comment-user-image">
+                    </div>
+
+                    <div class="comment-text-container">
+                         <h4>commented username</h4>
+                         <p class="comment-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde, saepe!</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!--new comment input fiels-->
+
+            <div class="postcomment-holder">
+                <div class="post-comment-input-field-holder">
+                    <input type="text" placeholder="post your comment" class="postcomment-input-field" id="postcomment-input-for-postid1">
+
+                </div>
+                <div class="comment-btn-holder">
+                    <button id="comment-btn" class="postcomment-btn">
+                        comment
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+    <script src="./js/utils/calculatetimedifference.js"></script>
+    <script src="./js/fetchdata.js"></script>
+    
+</body>
+</html>

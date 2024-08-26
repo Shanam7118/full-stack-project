@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>postbook</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <h1>welcome to postbook</h1>
+    <div class="login-form">
+        <h3>Please Login</h3>
+        <form>
+            <input type="text" name="user-id" id="user-id" placeholder="user id">
+            <input type="password" id="password" placeholder="password">
+        </form>
+        <button onclick="handlelogin()" class="login-btn">Login</button>
+    </div>
+
+    <!--error message-->
+    <div id="user-login-error" class="error hidden">
+
+        <h3>user id not found or password is wrong! please try again!</h3>
+    </div>
+
+
+    <script src="./js/login.js"></script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+.login-form{
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.login-form h3{
+    text-align: center;
+    color: olivedrab;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 10px;
+}
+
+input[type='text'] , input[type='password']{
+    padding: 10px;
+}
+
+.login-btn{
+    background-color: rgb(89, 89, 186);
+    color: white;
+    width: 12%;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    font-size: 15px;
+    margin: 0 auto;
+}
+
+.error{
+    color: rgb(234, 25, 25);
+
+}
+
+.error h3{
+    text-align: center;
+}
+
+.hidden{
+    display: none;
+}
